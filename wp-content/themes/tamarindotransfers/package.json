@@ -1,0 +1,16 @@
+{
+  "name": "tamarinsoTransfers",
+  "version": "0.0.1",
+
+  "devDependencies": {
+    "browser-sync": "^2.2.1",
+    "gulp-uglify": "^0.3.0",
+    "gulp": "^3.9.0",
+    "gulp-strip-debug": "^0.3.0",
+    "gulp-concat": "^2.2.0",
+    "gulp-clean-css": "^2.0.3",
+    "gulp-stylus": "^2.0.0",
+    "nib": "^1.1.0"
+  }
+
+}
