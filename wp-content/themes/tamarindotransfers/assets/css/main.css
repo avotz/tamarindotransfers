@@ -1475,6 +1475,9 @@ textarea {
   height: 100%;
   position: relative;
 }
+.home.page .nav-container .nav-menu-title {
+  display: block;
+}
 .home.page .nav-container ul li {
   font-size: 1.8rem;
   font-weight: 900;
