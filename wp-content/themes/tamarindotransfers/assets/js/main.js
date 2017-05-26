@@ -245,7 +245,7 @@ var scrollHandle = 0,
           var post_id = 36;
           $.ajax({
                 type: 'GET',
-                url: '/api/taxonomy/get_taxonomy_posts/?taxonomy=product_cat&slug=tour',//'/api/get_post/?id='+ post_id +'&post_type=tour',
+                url: '/tamarindotransfers/api/taxonomy/get_taxonomy_posts/?taxonomy=product_cat&slug=tour',//'/api/get_post/?id='+ post_id +'&post_type=tour',
                 
                 success: function(data){
                    // console.log(data)
