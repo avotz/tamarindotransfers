@@ -1505,7 +1505,12 @@ textarea {
 				font-size .8rem
 				font-weight 300*/
 .page.page-template-page-shuttle .home-logo {
-  width: 185px;
+  width: 95px;
+}
+@media screen and (min-width: 640px) {
+  .page.page-template-page-shuttle .home-logo {
+    width: 185px;
+  }
 }
 .home {
   width: 100%;
@@ -1536,14 +1541,14 @@ textarea {
   display: block;
 }
 .home.page-template-default .home-logo {
-  width: 185px;
+  width: 95px;
 }
 .home-logo {
   position: absolute;
   left: 1rem;
-  top: 1rem;
+  top: 5px;
   z-index: 50;
-  width: 185px;
+  width: 95px;
 }
 .home-social {
   position: absolute;
@@ -1628,6 +1633,15 @@ textarea {
   font-size: 14px;
   letter-spacing: 0.2em;
   font-weight: bold;
+}
+@media screen and (min-width: 640px) {
+  .home.page-template-default .home-logo {
+    width: 185px;
+  }
+  .home-logo {
+    width: 185px;
+    top: 1rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .home-social {
