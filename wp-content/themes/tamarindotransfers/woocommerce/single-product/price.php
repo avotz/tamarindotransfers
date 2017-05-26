@@ -21,8 +21,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
+$categories = get_the_terms( $product->ID, 'product_cat' );
+$cat = 'shuttle';
+
+foreach ($categories as $category) {
+if($category->parent == 0){
+   $cat = $category->slug;
+}
+
+}
 
 ?>
 <p class="price"><?php echo $product->get_price_html(); ?> per person</p>
-<p><a href="#transfer-popup" class="btn btn-yellow transfer-popup-link">inquery Now</a></p>
-
+<?php if($cat == 'tour') : ?>
+	<p><a href="#tour-popup" class="btn btn-yellow tour-popup-link" data-title="<?php echo $product->get_name(); ?>">inquery Now</a></p>
+<?php else: ?>
+	<p><a href="#transfer-popup" class="btn btn-yellow transfer-popup-link" data-title="<?php echo $product->get_name(); ?>">inquery Now</a></p>
+<?php endif; ?>

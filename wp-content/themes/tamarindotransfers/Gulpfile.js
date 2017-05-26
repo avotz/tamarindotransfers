@@ -45,6 +45,8 @@ gulp.task('js', function () {
      /*'./assets/js/vendor/grid.js',*/
       /*'./assets/js/vendor/jquery.lazy.min.js',*/
       './assets/js/vendor/flatpickr.js',
+      './assets/js/vendor/jquery.slimscroll.js',
+      
       './assets/js/main.js'
 
     ])

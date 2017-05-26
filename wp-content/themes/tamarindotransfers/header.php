@@ -29,7 +29,7 @@
 	    
 	</div>
 	<div class="shadow"></div>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home-logo"><img src="<?php echo get_template_directory_uri();  ?>/img/logo.png" alt="transfers" /></a>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home-logo"><img src="<?php echo get_template_directory_uri();  ?>/img/logo.png" alt=" Tamarindo transfers" /></a>
 	<div class="home-social">
 		<ul class="home-social-container">
 			<li><a href="https://www.facebook.com/Tamarindo-Transfers-Tours-419250951497312/" class="social-item" target="_blank"><i class="icon-facebook"></i></a></li>
@@ -37,6 +37,7 @@
 			<li><a href="#" class="social-item"><i class="fa fa-google-plus"></i></a></li>
 			<!-- <li><a href="#" class="social-item"><i class="fa fa-instagram"></i></a></li> -->
 			<li><a href="https://www.tripadvisor.ca/Attraction_Review-g309253-d7211918-Reviews-Tamarindo_Transfers_Tours-Tamarindo_Province_of_Guanacaste.html" class="social-item" target="_blank"><i class="fa fa-tripadvisor"></i></a></li>
+			<li><a href="https://www.youtube.com/channel/UCZ_Fmu8GZ3te5enJW8n-m_Q"><i class="fa fa-youtube"></i></a></li>
 		</ul>
 				
 	</div>
@@ -49,7 +50,7 @@
 		 		<!-- <h1 class="nav-menu-title">#1 Transport Experts in Costa Rica</h1> -->
 		 		<p class="nav-menu-title">#1 Transport Experts in Costa Rica</p>
 		 		<!-- <p class="nav-menu-subtitle">Select one service</p> -->
-				<ul class="nav-menu-ul">
+				<!-- <ul class="nav-menu-ul"> -->
 						 <?php wp_nav_menu( array(
 				             'theme_location' => 'primary',
 				             'menu_id' => 'primary-menu',
@@ -61,7 +62,7 @@
 				          ); 
 				          ?>
 			            
-			        </ul>
+			        <!-- </ul> -->
 			</nav>
 		</div>
 	

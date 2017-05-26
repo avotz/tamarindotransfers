@@ -48,7 +48,7 @@ get_header(); ?>
 		                       
 		                        ?>
 								  
-								  <a href="<?php the_permalink(); ?>" class="item">
+								  <a href="#transfer-popup" class="item transfer-popup-link" data-title="<?php the_title(); ?>">
 										<div class="item-img">
 											 <?php if ( has_post_thumbnail() ) :
 

@@ -101,6 +101,20 @@ function woocommerce_support() {
 }
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 
+//remove short description from sigle page
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+
+//add description to sigle page without tab
+add_filter( 'woocommerce_product_description_heading', 'remove_product_description_heading' );
+function remove_product_description_heading() {
+        return '';
+    }
+function woocommerce_template_product_description() {
+  woocommerce_get_template( 'single-product/tabs/description.php' );
+}
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_product_description', 20 );
+
+
 function woo_remove_product_tabs( $tabs ) {
 
     unset( $tabs['description'] ); 	

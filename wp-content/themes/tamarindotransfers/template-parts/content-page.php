@@ -10,34 +10,40 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+	
 
 	<div class="entry-content">
-		<?php
-			the_content();
+		<div class="entry-page-container">
+			<div class="page-media">
+				 <?php if ( has_post_thumbnail() ) :
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'tamarindotransfers' ),
-				'after'  => '</div>',
-			) );
-		?>
+	                  $id = get_post_thumbnail_id($post->ID);
+	                  $thumb_url = wp_get_attachment_image_src($id,'tour-thumb', true);
+	                  ?>
+	                  
+	              
+	               <figure class="page-banner" style="background-image: url('<?php echo $thumb_url[0] ?>');">
+			
+				</figure>
+	                
+	              <?php endif; ?>
+				
+			</div>
+			<div class="page-info">
+				<div class="page-content">
+					<header class="entry-header">
+						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					</header><!-- .entry-header -->
+					<?php
+						the_content();
+
+					?>
+				</div>
+				
+				
+			</div>
+		</div>
+		
 	</div><!-- .entry-content -->
 
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-				edit_post_link(
-					sprintf(
-						/* translators: %s: Name of current post */
-						esc_html__( 'Edit %s', 'tamarindotransfers' ),
-						the_title( '<span class="screen-reader-text">"', '"</span>', false )
-					),
-					'<span class="edit-link">',
-					'</span>'
-				);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
 </article><!-- #post-## -->

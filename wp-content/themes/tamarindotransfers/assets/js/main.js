@@ -122,7 +122,7 @@
 
   });
 
- $menu.find(".menu-item").hoverIntent({
+ $menu.find(".nav-menu-ul > .menu-item").hoverIntent({
       over: function() {
             $itemMenu = $(this);
             $itemMenu.find(".menu-description").addClass('show');
@@ -219,6 +219,82 @@ var scrollHandle = 0,
 
        
     });
+  $('.tour-popup-link').magnificPopup({
+        type: 'inline',
+        midClick: true,
+        removalDelay: 500, //delay removal by X to allow out-animation
+        callbacks: {
+            beforeOpen: function() {
+
+                this.st.mainClass = 'mfp-zoom-out';
+                $('body').addClass('mfp-open');
+            },
+            beforeClose: function() {
+
+               
+                $('body').removeClass('mfp-open');
+            }
+
+        }
+
+       
+    });
+
+  function fillSelectTour(){
+          //var selectedCategory = ($('#selectedCategory').val()) ? $('#selectedCategory').val() : 'atv';
+          var post_id = 36;
+          $.ajax({
+                type: 'GET',
+                url: '/api/taxonomy/get_taxonomy_posts/?taxonomy=product_cat&slug=tour',//'/api/get_post/?id='+ post_id +'&post_type=tour',
+                
+                success: function(data){
+                   // console.log(data)
+
+                    var items = [];
+
+                var select = $('select[name="tour"]').empty();
+                $.each(data.posts, function(i,item) {
+                  select.append( '<option value="'
+                                       + $.trim(item.title) + '">'
+                                       + item.title
+                                       + '</option>' ); 
+
+
+           
+                });
+          
+
+                select.prepend('<option value="" selected><span style="color:red;">--</span></option>');
+                    
+                },
+                error:function(){
+                    console.log('error cargando los tours')
+                }
+            });
+          
+    }
+
+    $('.tour-popup-link').on('click',function (e) {
+      
+      
+      //console.log($(this).data('activitie'))
+      $('#tour-popup').find('select[name="tour"] option[value="'+ $(this).attr('data-title') +'"]').attr("selected",true).change();
+
+
+      
+
+      });
+
+ $('.transfer-popup-link').on('click',function (e) {
+      
+      
+      //console.log($(this).data('activitie'))
+      $('#transfer-popup').find('input[name="destination"]').val($(this).attr('data-title'));
+
+
+      
+
+      });
 /*
 $(".items-arrow").click(function() {
   if ($(this).hasClass("items-arrow-right")) {
@@ -340,6 +416,8 @@ $(".items-arrow").click(function() {
           }*/
       });
 
+   
+
  $(window).load(function() {
      
       // Preloader
@@ -351,15 +429,23 @@ $(".items-arrow").click(function() {
       });
     });
      
+      // $('.summary-content').slimScroll({
+      //   height: $('.product').height()
+      // });
+      // $('.page-content').slimScroll({
+      //   height: $('.entry-page-container').height()
+      // });
+
       resizes();
       setDescriptionMenus();
+      fillSelectTour();
 
     });
 
     $(window).resize(resizes);
 
     function setDescriptionMenus() {
-        $menu.find(".menu-item").each(function () {
+        $menu.find(".nav-menu-ul > .menu-item").each(function () {
 
            var description = $(this).find("a").attr('title');
             $(this).append('<div class="menu-description">'+description +'</div>')
@@ -378,6 +464,25 @@ $(".items-arrow").click(function() {
             $('.home-video video').height('auto').width($("body").width() + 90);
           else
             $('.home-video video').height($("body").height() + 90).width('auto');
+          if(getWindowWidth() > 768){
+
+              $('.page-content').slimScroll({
+                height: $('.page-media').height() - 50
+              });
+
+              $('.summary-content').slimScroll({
+                 height: $('.product').height() - 50
+               });
+
+         }else {
+            $('.page-content').slimScroll({
+                height: '400px'
+              });
+
+              $('.summary-content').slimScroll({
+                 height: '400px'
+               });
+         }
         
         
        

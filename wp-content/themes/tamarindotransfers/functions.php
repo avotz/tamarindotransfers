@@ -120,6 +120,17 @@ function tamarindotransfers_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'tamarindotransfers_scripts' );
 
+
+function add_taxonomy_controller($controllers) {
+  $controllers[] = 'Taxonomy';
+  return $controllers;
+}
+add_filter('json_api_controllers', 'add_taxonomy_controller');
+
+function set_taxonomy_controller_path() {
+  return get_stylesheet_directory() . '/json-api-taxonomy-index.php';
+}
+add_filter('json_api_taxonomy_controller_path', 'set_taxonomy_controller_path');
 /**
  * Implement the Custom woocommerce feature.
  */
