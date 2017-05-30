@@ -1019,7 +1019,7 @@ textarea
 .page-content
 	padding 2rem
 	
-@media screen and (min-width:768px)
+@media screen and (min-width:1000px)
 	.page-media
 		float right
 		height: 83vh;
@@ -1034,6 +1034,88 @@ textarea
 	.page-content
 		padding 2rem 1rem 2rem 4rem	
 
+.people
+	list-style none
+	margin 0 !important
+	.person 
+		position: relative;
+		transform: translateZ(0);
+		user-select: none;
+		margin-bottom .5rem
+		&.drivers
+			.person-info
+				&-name
+					margin: 10% 0 0;
+		&:hover 
+			.person-info 
+				opacity: 1;
+		img 
+			display: block;
+			max-width: 100%;
+		&-info 
+			//opacity: 0;
+			//position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(255,255,255,0.9);
+			transition-property: opacity;
+			transition-duration: 0.2s;
+			transition-timing-function: cubic-bezier(0.64, 0.135, 0.235, 1);
+			&-name 
+				text-align: center;
+				line-height 13px
+				margin 0px //margin: 50% 0 0;
+				font-size: 13px;
+			&-title
+				margin-top 5px
+				text-align: center;
+				//white-space: nowrap;
+				line-height 13px
+				font-size: 13px;
+				display: block;
+				color: #afb1b4;
+				font-size: 0.7em;
+				font-weight: 700;
+				letter-spacing: 1.4px;
+				text-transform: uppercase;
+			&-contact
+				text-align: center;
+				line-height 13px
+				font-size: 13px;
+				display: block;
+@media (min-width: 640px)
+	.people
+		.person
+			&-info
+				opacity: 0;
+				position: absolute;
+				&-name 
+					margin: 50% 0 0;
+@media(max-width: 568px)
+	.people
+		.person
+			width: 49.06832%;
+			float: left;
+			margin-right: 1.86335%;
+			margin-bottom: 3.79747%;
+@media (max-width: 1024px) and (min-width: 569px)
+	.people
+		.person
+			width: 31.66667%;
+			float: left;
+			margin-right: 2.5%;
+			margin-bottom: 2.82132%;
+
+@media (min-width: 1025px)
+	.people
+		.person
+			width: 30.33%;
+			float: left;
+			margin-right: 1.86335%;
+			margin-bottom: 1.86335%;
+			
 		
 
 

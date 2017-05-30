@@ -464,7 +464,7 @@ $(".items-arrow").click(function() {
             $('.home-video video').height('auto').width($("body").width() + 90);
           else
             $('.home-video video').height($("body").height() + 90).width('auto');
-          if(getWindowWidth() > 768){
+          if(getWindowWidth() > 1000){
 
               $('.page-content').slimScroll({
                 height: $('.page-media').height() - 50
