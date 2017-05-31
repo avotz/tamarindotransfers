@@ -16,13 +16,17 @@ html
 body
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
+
+@media screen and (min-width: 768px)
+	html
+	body
+		overflow: hidden;
 body
 	font-family 'Roboto', sans-serif
 	font-size 16px
 	line-height 30px
 	background-color #F6F6F6
-	background url('./img/bg-section.jpg')
+	background url('./img/bg-section-turquesa.jpg')
 	background-size cover
 	background-position center center
 	background-repeat no-repeat
@@ -34,6 +38,9 @@ body
 		.section	 
 			filter: blur(5px);
 			-webkit-filter: blur(5px);
+
+
+	
 
 ul
 	margin 0
@@ -77,6 +84,8 @@ img
 input[type="number"]
 input[type="text"]
 input[type="email"]
+input[type="date"]
+input[type="time"]	
 select
 textarea
 	height: 36px;
@@ -91,7 +100,12 @@ textarea
 	margin-bottom: 1.25rem;
 	.column
 	label
-		width 45%
+		width 100%
+@media screen and (min-width: 540px)
+	.columns-2
+		.column
+		label
+			width 45%
 .txt-center
 	text-align center
 .overflow
@@ -370,7 +384,7 @@ textarea
 							opacity 0
 
 .mobile
-
+	
 	.nav-container
 		background-color rgba(0,0,0,.7)
 		display none
@@ -416,6 +430,7 @@ textarea
 	left 0
 	padding 2rem
 	&.mobile
+		overflow hidden !important
 		.nav-container
 			background-color transparent
 			display flex
@@ -446,6 +461,8 @@ textarea
 		position absolute
 		//right 1rem
 		top 4.5rem//1rem
+		left 0
+		right 0
 		width 100%
 		z-index 50
 		&-container
@@ -465,6 +482,7 @@ textarea
 		width 100%
 		height 100%
 		z-index -1
+		
 		&:before
 			content ""
 			z-index 1
@@ -477,6 +495,7 @@ textarea
 			height 100%
 			
 		video
+			display none
 			position absolute
 			top 50%
 			left 50%
@@ -512,8 +531,12 @@ textarea
 	.home
 		&-social
 			right 1rem
+			left auto
 			width auto
 			top 1rem
+		&-video
+			video
+				display block
 	.page
 	.single
 	.archive
@@ -724,6 +747,13 @@ textarea
 				/*active*/
 				opacity 1
 				transition .5s opacity
+				.item-description
+					font-size: 0.8em;
+					letter-spacing: 0px;
+					line-height: 1.4;
+					margin: 0;
+					max-width: auto
+					display block
 			&.hover
 				height 100%
 				justify-content flex-start
@@ -846,7 +876,7 @@ textarea
 				overflow-y scroll
 		.item 
 			flex-basis: auto;
-			max-height: 40%;
+			max-height: 50%//40%;
 			max-width: none;
 			overflow: hidden;
 			width: 100%;
@@ -854,6 +884,8 @@ textarea
 			&-content 
 				&.base 
 					padding: 1em;
+					// .item-description
+					// 	display block
 				&.hover 
 					display none
 			&-name 
@@ -861,6 +893,10 @@ textarea
 @media only screen and (min-width: 1081px)
 	.menu 
 		.item
+			&-content 
+				&.base 
+					.item-description
+						display none
 			&:hover 
 				animation: menuItemHoverLeft 0.7s cubic-bezier(0.315, 0.605, 0.375, 0.925) 1;
 				animation-fill-mode forwards
@@ -894,6 +930,8 @@ textarea
 .request-popup
 	.note 
 		font-size 12px;
+	ul 
+		margin-left 15px
 	a 
 		&:hover 
 			text-decoration underline

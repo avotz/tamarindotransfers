@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 	<div class="section">
-		
+		<div class="container">
 	
 	<?php
 		/**
@@ -48,6 +48,7 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_after_main_content' );
 	?>
+	</div>
 </div>
 	<?php
 		/**

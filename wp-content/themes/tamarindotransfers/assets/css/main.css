@@ -959,14 +959,19 @@ html,
 body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  html,
+  body {
+    overflow: hidden;
+  }
 }
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 30px;
   background-color: #f6f6f6;
-  background: url("./img/bg-section.jpg");
+  background: url("./img/bg-section-turquesa.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -1029,6 +1034,8 @@ img {
 input[type="number"],
 input[type="text"],
 input[type="email"],
+input[type="date"],
+input[type="time"],
 select,
 textarea {
   height: 36px;
@@ -1060,7 +1067,13 @@ textarea {
 }
 .columns-2 .column,
 .columns-2 label {
-  width: 45%;
+  width: 100%;
+}
+@media screen and (min-width: 540px) {
+  .columns-2 .column,
+  .columns-2 label {
+    width: 45%;
+  }
 }
 .txt-center {
   text-align: center;
@@ -1531,6 +1544,9 @@ textarea {
   left: 0;
   padding: 2rem;
 }
+.home.mobile {
+  overflow: hidden !important;
+}
 .home.mobile .nav-container {
   background-color: transparent;
   display: -webkit-box;
@@ -1573,6 +1589,8 @@ textarea {
 .home-social {
   position: absolute;
   top: 4.5rem;
+  left: 0;
+  right: 0;
   width: 100%;
   z-index: 50;
 }
@@ -1626,6 +1644,7 @@ textarea {
   height: 100%;
 }
 .home-video video {
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1666,8 +1685,12 @@ textarea {
 @media screen and (min-width: 768px) {
   .home-social {
     right: 1rem;
+    left: auto;
     width: auto;
     top: 1rem;
+  }
+  .home-video video {
+    display: block;
   }
   .page .nav-container,
   .single .nav-container,
@@ -2049,6 +2072,14 @@ textarea {
   -ms-transition: 0.5s opacity;
   transition: 0.5s opacity;
 }
+.menu .item-content.base .item-description {
+  font-size: 0.8em;
+  letter-spacing: 0px;
+  line-height: 1.4;
+  margin: 0;
+  max-width: auto;
+  display: block;
+}
 .menu .item-content.hover {
   height: 100%;
   -webkit-box-pack: start;
@@ -2259,7 +2290,7 @@ textarea {
   .menu .item {
     -webkit-flex-basis: auto;
     flex-basis: auto;
-    max-height: 40%;
+    max-height: 50%;
     max-width: none;
     overflow: hidden;
     width: 100%;
@@ -2276,6 +2307,9 @@ textarea {
   }
 }
 @media only screen and (min-width: 1081px) {
+  .menu .item-content.base .item-description {
+    display: none;
+  }
   .menu .item:hover {
     -webkit-animation: menuItemHoverLeft 0.7s cubic-bezier(0.315, 0.605, 0.375, 0.925) 1;
     -moz-animation: menuItemHoverLeft 0.7s cubic-bezier(0.315, 0.605, 0.375, 0.925) 1;
@@ -2348,6 +2382,9 @@ textarea {
 }
 .request-popup .note {
   font-size: 12px;
+}
+.request-popup ul {
+  margin-left: 15px;
 }
 .request-popup a:hover {
   text-decoration: underline;

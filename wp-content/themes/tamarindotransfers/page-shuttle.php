@@ -68,6 +68,9 @@ get_header(); ?>
 												<div class="item-bar"></div>
 											</div>
 											<span class="item-price"><?php  woocommerce_template_loop_price(); ?> per person</span>
+											<div class="item-description">
+												<?php the_excerpt() ?>
+											</div>
 										</div>
 										<div class="item-content hover">
 											<div class="item-content-container">

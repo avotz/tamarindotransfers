@@ -36,8 +36,15 @@
 	<div class="copyright">
 		copyright &copy; 2017 <a href="https://www.avotz.com" target="_blank" title="Avotz Webworks"><i class="icon-avotz"></i></a>
 	</div>
-	<div id="transfer-popup" class="request-popup white-popup mfp-hide mfp-with-anim">               
+	<div id="transfer-popup" class="request-popup white-popup mfp-hide mfp-with-anim">   
+
 	    <?php echo do_shortcode('[contact-form-7 id="43" title="Book Transfer"]') ?>
+<ul>
+	
+
+	    <li>For arrivals between <b>11:30 AM and 2 PM</b> we have a <b>minimum of 2 passengers</b> or <b>$40</b> if you end up traveling by yourselves.</li>  
+<li>For departure between <b>9 AM and 12 PM</b> we have a <b>minimum of 2 passengers</b> or <b>$40</b> if you end up traveling by yourselves.</li> 
+<li><b>ALL OTHER ARRIVAL AND DEPARTURE TIMES</b> we have a minimum of <b>3 passengers</b> or <b>$60</b> if you end up traveling by yourselves.</li></ul>   
 	</div>
 	<div id="tour-popup" class="request-popup white-popup mfp-hide mfp-with-anim">               
 	    <?php echo do_shortcode('[contact-form-7 id="71" title="Book Tour"]') ?>
