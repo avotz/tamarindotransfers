@@ -52,6 +52,7 @@ $categorySelected = get_terms( array(
 		                    $args = array(
 		                      'post_type' => 'product',
 		                      'order' => 'ASC',
+		                      'orderby' =>'title',
 		                      'posts_per_page' => -1,
 		                     'tax_query' => array(
 		                        array(
