@@ -285,8 +285,8 @@ textarea
 		position absolute
 		z-index 30
 		top: 100px;
-		background-color rgba(0,0,0,.7)
-		display none
+		//background-color rgba(0,0,0,.7)
+		//display none
 		
 		.nav-menu-title
 			display none
@@ -305,6 +305,7 @@ textarea
 				font-weight 300
 				text-transform uppercase
 				position relative
+				margin-bottom .8rem
 				
 				
 					
@@ -346,8 +347,7 @@ textarea
 					&:after
 						opacity 1
 			.sub-menu
-				position absolute
-				top 3rem
+				
 				left 50%
 				transform translate(-50%, 0)
 				z-index 2
@@ -355,7 +355,7 @@ textarea
 				text-align center
 				display none
 				padding .5rem
-				background-color rgba(0,0,0,.55)
+				
 				li 
 					text-align center
 					display block
@@ -363,21 +363,40 @@ textarea
 				a
 					display block
 					padding .2rem 0
+					color #64b4a9
 					&:hover
 						color turquesa
 						&:after
 							opacity 0
-	
-/*.page
+
+.mobile
+
 	.nav-container
-		padding-top 1rem
-		align-items flex-start
-		.nav-menu-title
-			display none
-		ul
+		background-color rgba(0,0,0,.7)
+		display none
+		
+		ul.nav-menu-ul 
 			li 
-				font-size .8rem
-				font-weight 300*/
+				> div.menu-description
+					display none !important
+		.sub-menu
+			position relative
+
+
+@media screen and (min-width:768px)
+	.page
+	.single
+	.archive
+		.nav-container
+			.sub-menu
+				position absolute
+				background-color rgba(0,0,0,.55)
+				top 3rem
+			ul.nav-menu-ul
+				li
+					> div.menu-description
+						display block 
+
 .page
 	&.page-template-page-shuttle
 		.home-logo
@@ -396,6 +415,10 @@ textarea
 	top 0
 	left 0
 	padding 2rem
+	&.mobile
+		.nav-container
+			background-color transparent
+			display flex
 	&.page
 		.nav-container
 			align-items center
@@ -950,7 +973,7 @@ textarea
 
 .woocommerce div.product div.images .woocommerce-product-gallery__wrapper
 	background-size cover
-	background-position top center
+	background-position center center
 	position absolute
 	top 0
 	left 0

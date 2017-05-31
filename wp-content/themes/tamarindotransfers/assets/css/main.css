@@ -1341,8 +1341,6 @@ textarea {
   position: absolute;
   z-index: 30;
   top: 100px;
-  background-color: rgba(0,0,0,0.7);
-  display: none;
 }
 .page .nav-container .nav-menu-title,
 .single .nav-container .nav-menu-title,
@@ -1382,6 +1380,7 @@ textarea {
   font-weight: 300;
   text-transform: uppercase;
   position: relative;
+  margin-bottom: 0.8rem;
 }
 .page .nav-container ul.nav-menu-ul li > div.menu-description,
 .single .nav-container ul.nav-menu-ul li > div.menu-description,
@@ -1454,8 +1453,6 @@ textarea {
 .page .nav-container ul.nav-menu-ul .sub-menu,
 .single .nav-container ul.nav-menu-ul .sub-menu,
 .archive .nav-container ul.nav-menu-ul .sub-menu {
-  position: absolute;
-  top: 3rem;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
   -moz-transform: translate(-50%, 0);
@@ -1467,7 +1464,6 @@ textarea {
   text-align: center;
   display: none;
   padding: 0.5rem;
-  background-color: rgba(0,0,0,0.55);
 }
 .page .nav-container ul.nav-menu-ul .sub-menu li,
 .single .nav-container ul.nav-menu-ul .sub-menu li,
@@ -1481,6 +1477,7 @@ textarea {
 .archive .nav-container ul.nav-menu-ul .sub-menu a {
   display: block;
   padding: 0.2rem 0;
+  color: #64b4a9;
 }
 .page .nav-container ul.nav-menu-ul .sub-menu a:hover,
 .single .nav-container ul.nav-menu-ul .sub-menu a:hover,
@@ -1494,16 +1491,30 @@ textarea {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
 }
-/*.page
-	.nav-container
-		padding-top 1rem
-		align-items flex-start
-		.nav-menu-title
-			display none
-		ul
-			li 
-				font-size .8rem
-				font-weight 300*/
+.mobile .nav-container {
+  background-color: rgba(0,0,0,0.7);
+  display: none;
+}
+.mobile .nav-container ul.nav-menu-ul li > div.menu-description {
+  display: none !important;
+}
+.mobile .nav-container .sub-menu {
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .page .nav-container .sub-menu,
+  .single .nav-container .sub-menu,
+  .archive .nav-container .sub-menu {
+    position: absolute;
+    background-color: rgba(0,0,0,0.55);
+    top: 3rem;
+  }
+  .page .nav-container ul.nav-menu-ul li > div.menu-description,
+  .single .nav-container ul.nav-menu-ul li > div.menu-description,
+  .archive .nav-container ul.nav-menu-ul li > div.menu-description {
+    display: block;
+  }
+}
 .page.page-template-page-shuttle .home-logo {
   width: 95px;
 }
@@ -1519,6 +1530,15 @@ textarea {
   top: 0;
   left: 0;
   padding: 2rem;
+}
+.home.mobile .nav-container {
+  background-color: transparent;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
 }
 .home.page .nav-container {
   -webkit-box-align: center;
@@ -2422,7 +2442,7 @@ textarea {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  background-position: top center;
+  background-position: center center;
   position: absolute;
   top: 0;
   left: 0;

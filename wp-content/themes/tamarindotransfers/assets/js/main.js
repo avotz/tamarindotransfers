@@ -483,6 +483,15 @@ $(".items-arrow").click(function() {
                  height: '400px'
                });
          }
+
+         if(getWindowWidth() > 768){
+
+            $('body').removeClass('mobile')
+
+         }else {
+
+            $('body').addClass('mobile')
+         }
         
         
        
