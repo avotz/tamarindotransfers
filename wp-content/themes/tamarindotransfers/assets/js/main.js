@@ -291,7 +291,7 @@ var scrollHandle = 0,
       //console.log($(this).data('activitie'))
       $('#transfer-popup').find('input[name="destination"]').val($(this).attr('data-title'));
       $('#transfer-popup').find('.request-popup-notes').html('');
-      if($(this).attr('data-arrivals') != ''){
+      if($(this).attr('data-arrivals') && $(this).attr('data-arrivals') != ''){
         $('#transfer-popup').find('.request-popup-notes').html('<ul><li>'+$(this).attr('data-arrivals')+'</li><li>'+$(this).attr('data-departures')+'</li><li>'+$(this).attr('data-others')+'</li></ul>');
       }
 
