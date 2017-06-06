@@ -49,7 +49,7 @@ get_header(); ?>
 		                       
 		                        ?>
 								  
-								  <a href="#transfer-popup" class="item transfer-popup-link" data-title="<?php the_title(); ?>">
+								  <a href="#transfer-popup" class="item transfer-popup-link" data-title="<?php the_title(); ?>" data-arrivals="<?php echo get_post_meta( $post->ID, 'notes_arrivals', true ); ?>" data-departures="<?php echo get_post_meta( $post->ID, 'notes_departures', true ); ?>" data-others="<?php echo get_post_meta( $post->ID, 'notes_others', true ); ?>">
 										<div class="item-img">
 											 <?php if ( has_post_thumbnail() ) :
 

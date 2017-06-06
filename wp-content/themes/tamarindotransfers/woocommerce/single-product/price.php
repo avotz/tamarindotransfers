@@ -36,5 +36,5 @@ if($category->parent == 0){
 <?php if($cat == 'tour') : ?>
 	<p><a href="#tour-popup" class="btn btn-yellow tour-popup-link" data-title="<?php echo $product->get_name(); ?>">inquery Now</a></p>
 <?php else: ?>
-	<p><a href="#transfer-popup" class="btn btn-yellow transfer-popup-link" data-title="<?php echo $product->get_name(); ?>">inquery Now</a></p>
+	<p><a href="#transfer-popup" class="btn btn-yellow transfer-popup-link" data-title="<?php echo $product->get_name(); ?>" data-arrivals="<?php echo get_post_meta( $product->get_id(), 'notes_arrivals', true ); ?>" data-departures="<?php echo get_post_meta( $product->get_id(), 'notes_departures', true ); ?>" data-others="<?php echo get_post_meta( $product->get_id(), 'notes_others', true ); ?>">inquery Now</a></p>
 <?php endif; ?>
